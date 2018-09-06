@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">The Movie DB</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="favourite">Favourite</string>
+</resources>
