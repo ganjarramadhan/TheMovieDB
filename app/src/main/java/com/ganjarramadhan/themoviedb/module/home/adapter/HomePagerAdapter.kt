@@ -28,11 +28,8 @@ class HomePagerAdapter(private val context: Context,
             0 -> {
                 context.resources.getString(R.string.popular)
             }
-            1 -> {
-                context.resources.getString(R.string.top_rated)
-            }
             else -> {
-                context.resources.getString(R.string.favourite)
+                context.resources.getString(R.string.top_rated)
             }
         }
     }

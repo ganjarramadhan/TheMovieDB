@@ -22,29 +22,20 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
+            android:ellipsize="middle"
             android:gravity="center"
-            android:maxLines="1"
+            android:lines="2"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvGenre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:textSize="14sp" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp">
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp">
 
             <TextView
                 android:id="@+id/tvYear"
@@ -52,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:singleLine="true"
                 tools:text="2018" />
 
@@ -61,8 +53,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:drawableLeft="@drawable/ic_star"
                 android:drawableStart="@drawable/ic_star"
+                android:gravity="center"
                 android:singleLine="true"
                 tools:text="4.5" />
 

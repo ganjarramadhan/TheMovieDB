@@ -6,4 +6,6 @@
     <string name="popular">Popular</string>
     <string name="top_rated">Top Rated</string>
     <string name="favourite">Favourite</string>
+    <string name="loading">Loading...</string>
+    <string name="retry">Retry</string>
 </resources>

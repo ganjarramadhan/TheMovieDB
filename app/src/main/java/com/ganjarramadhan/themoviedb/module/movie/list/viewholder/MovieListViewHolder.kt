@@ -16,5 +16,7 @@ class MovieListViewHolder(view: View): RecyclerView.ViewHolder(view) {
     fun bind(movie: Movie) {
         GlideApp.with(itemView.context).load(movie.posterPath?.toMovieDbImageUrl()).into(itemView.imgPoster)
         itemView.tvTitle.text = movie.title
+        itemView.tvRating.text = movie.voteAverage.toString()
+        itemView.tvYear.text = movie.releaseDate
     }
 }

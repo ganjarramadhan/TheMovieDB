@@ -28,13 +28,12 @@ class HomeActivity: AppCompatActivity() {
         // assign fragment
         val fragmentListPopularMovie = MovieListFragment.newInstance(MovieListFragment.LIST_POPULAR)
         val fragmentListTopRatedMovie = MovieListFragment.newInstance(MovieListFragment.LIST_TOP_RATED)
-        val fragmentListFavoriteMovie = MovieListFragment.newInstance(MovieListFragment.LIST_FAVORITE)
 
         val fragmentList = arrayListOf<Fragment>(fragmentListPopularMovie,
-                fragmentListTopRatedMovie, fragmentListFavoriteMovie)
+                fragmentListTopRatedMovie)
 
         viewPager.adapter = HomePagerAdapter(this, supportFragmentManager, fragmentList)
-        viewPager.offscreenPageLimit = 3
+        viewPager.offscreenPageLimit = 2
 
     }
 
