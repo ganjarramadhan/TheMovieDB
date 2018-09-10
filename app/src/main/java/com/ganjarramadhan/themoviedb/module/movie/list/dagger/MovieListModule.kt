@@ -5,7 +5,7 @@ import com.ganjarramadhan.themoviedb.module.movie.list.MovieListFragment
 import com.ganjarramadhan.themoviedb.module.movie.list.mvp.MovieListModel
 import com.ganjarramadhan.themoviedb.module.movie.list.mvp.MovieListPresenter
 import com.ganjarramadhan.themoviedb.module.movie.list.mvp.MovieListView
-import com.ganjarramadhan.themoviedb.repository.service.MovieListService
+import com.ganjarramadhan.themoviedb.repository.service.MovieService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -27,11 +27,11 @@ class MovieListModule(private val fragment: MovieListFragment) {
 
     @MovieListScope
     @Provides
-    fun model(appsPreferences: AppsPreferences, service: MovieListService) =
+    fun model(appsPreferences: AppsPreferences, service: MovieService) =
             MovieListModel(fragment, appsPreferences, service)
 
     @MovieListScope
     @Provides
-    fun service(retrofit: Retrofit) = retrofit.create(MovieListService::class.java)
+    fun service(retrofit: Retrofit) = retrofit.create(MovieService::class.java)
 
 }

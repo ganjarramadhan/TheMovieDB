@@ -49,7 +49,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.0'
 
     // simple state
-    implementation "cz.kinst.jakub:android-stateful-layout-base:2.0.7"
+    implementation 'cz.kinst.jakub:android-stateful-layout-simple:2.0.7'
 
     // dagger
     implementation 'com.google.dagger:dagger:2.17'

@@ -48,14 +48,16 @@ class MovieListPresenter(private val view: MovieListView, private val model: Mov
                 }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { data ->
+                .subscribe({ data ->
                     if (data.results?.isNotEmpty() == true) {
                         currentPage++
                         view.addMoviesToList(data.results, true)
                     } else {
                         Timber.e("Error")
                     }
-                }
+                }, { error ->
+                    view.showError(error.localizedMessage)
+                })
     }
 
     private fun getMovies(page: Int): Flowable<MovieListResponse> {
@@ -68,10 +70,12 @@ class MovieListPresenter(private val view: MovieListView, private val model: Mov
         return model.getMovies(1)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { data ->
+                .subscribe({ data ->
                     currentPage++
                     view.addMoviesToList(data.results, true)
-                }
+                }, { error ->
+                    view.showError(error.localizedMessage)
+                })
     }
 
 }

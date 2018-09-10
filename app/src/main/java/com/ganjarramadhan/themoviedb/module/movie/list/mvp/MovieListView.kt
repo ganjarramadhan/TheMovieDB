@@ -4,6 +4,7 @@ import android.content.Context
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.ganjarramadhan.themoviedb.R
 import com.ganjarramadhan.themoviedb.entity.response.Movie
 import com.ganjarramadhan.themoviedb.module.movie.detail.MovieDetailActivity
@@ -58,8 +59,12 @@ class MovieListView(context: Context): FrameLayout(context) {
         adapter.errorListener = object : InfiniteAdapterPlus.OnErrorListener {
             override fun onRetryLoadMore() {
                 adapter.showError(false)
+                pageManager.onNext(false)
             }
         }
+
+        swipeRefresh.isRefreshing = true
+        pageManager.onNext(true)
     }
 
     fun observeMovieItemClick(): PublishSubject<Movie> {
@@ -74,5 +79,10 @@ class MovieListView(context: Context): FrameLayout(context) {
         movie.id?.let { it ->
             MovieDetailActivity.start(context, it)
         }
+    }
+
+    fun showError(errorMessage: String?) {
+        if (swipeRefresh.isRefreshing) swipeRefresh.isRefreshing = false
+        Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
     }
 }

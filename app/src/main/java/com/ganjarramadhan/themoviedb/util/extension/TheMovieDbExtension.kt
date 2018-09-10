@@ -1,10 +1,8 @@
 package com.ganjarramadhan.themoviedb.util.extension
 
-import android.content.Context
 import android.content.res.Resources
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import com.ganjarramadhan.themoviedb.app.constant.AppConstant
+import com.ganjarramadhan.themoviedb.entity.response.GenresItem
 
 
 /**
@@ -20,7 +18,14 @@ fun Int.toPx(): Int {
     return (this * Resources.getSystem().displayMetrics.density).toInt()
 }
 
-fun View.hideKeyboard() {
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.hideSoftInputFromWindow(windowToken, 0)
+fun List<GenresItem?>.toGenreString(): String {
+    var result = ""
+    forEachIndexed { index, genresItem ->
+        if (index == size - 1) {
+            result = "$result${genresItem?.name}"
+        } else {
+            result = "$result${genresItem?.name}, "
+        }
+    }
+    return result
 }

@@ -27,7 +27,6 @@
 
         <activity
             android:name=".module.movie.detail.MovieDetailActivity"
-            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 

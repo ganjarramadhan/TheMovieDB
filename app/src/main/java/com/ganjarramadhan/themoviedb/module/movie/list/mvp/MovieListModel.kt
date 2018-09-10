@@ -5,7 +5,7 @@ import com.ganjarramadhan.themoviedb.app.constant.AppsPreferences
 import com.ganjarramadhan.themoviedb.base.BaseModel
 import com.ganjarramadhan.themoviedb.entity.response.MovieListResponse
 import com.ganjarramadhan.themoviedb.module.movie.list.MovieListFragment
-import com.ganjarramadhan.themoviedb.repository.service.MovieListService
+import com.ganjarramadhan.themoviedb.repository.service.MovieService
 import io.reactivex.Flowable
 
 /**
@@ -14,7 +14,7 @@ import io.reactivex.Flowable
  */
 class MovieListModel(private val fragment: MovieListFragment,
                      private val appsPreferences: AppsPreferences,
-                     private val service: MovieListService): BaseModel(appsPreferences) {
+                     private val service: MovieService) : BaseModel(appsPreferences) {
 
     fun getListType(): Int {
         return fragment.arguments?.getInt(MovieListFragment.LIST_TYPE) ?: MovieListFragment.LIST_POPULAR
